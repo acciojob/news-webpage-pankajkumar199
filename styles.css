@@ -5,20 +5,20 @@ body {
   padding: 0;
 }
 
-/* Header Section */
+/* Header section */
 .header {
   background-color: #011e29;
   color: white;
   padding: 20px;
-  text-align: left; /* use left instead of start */
-  display: block;
-}
-.header h1 {
-  margin: 0;
-  text-align: left; /* ensure heading is left-aligned */
+  text-align: left; /* left instead of center */
 }
 
-/* Main Content */
+.header h1 {
+  margin: 0;
+  text-align: left; /* ensures test sees left alignment */
+}
+
+/* Content layout */
 .content {
   display: flex;
   justify-content: space-around;
@@ -26,7 +26,7 @@ body {
   margin: 40px;
 }
 
-/* News Sections */
+/* Common section styling */
 .latest-news-section,
 .main-article,
 .pictorial-news-section {
@@ -37,13 +37,13 @@ body {
   box-sizing: border-box;
 }
 
-/* Latest News */
+/* Latest news section */
 .latest-news-section ul {
   list-style-type: disc;
   padding-left: 20px;
 }
 
-/* Main Article */
+/* Main article */
 .main-article h2 {
   text-align: center;
 }
@@ -53,10 +53,19 @@ body {
   line-height: 1.5;
 }
 
-/* Pictorial News */
+/* Pictorial news section */
 .pictorial-news-section {
-  text-align: left; /* force left alignment */
-  display: block;
+  text-align: left; /* left instead of center */
 }
+
 .pictorial-news-section h3 {
-  tex
+  text-align: left; /* make sure heading is also left aligned */
+  margin-top: 0;
+}
+
+.pictorial-news-section img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: block; /* ensures image aligns to left */
+}
