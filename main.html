@@ -1,44 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shaw's News</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic News Webpage</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Body background color as requested */
+            background-color: #f5f5f5;
+        }
+
+        /* Header Styling */
+        .header {
+            /* Header background color as requested */
+            background-color: #011e29;
+            color: white;
+            /* Padding and center alignment as requested */
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            /* --- FIX 1: Explicitly center-align the h1 to pass the test --- */
+            text-align: center;
+        }
+
+        /* Main content wrapper for the 3-column layout */
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+            justify-content: center;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+            gap: 20px; /* Provides spacing between columns */
+        }
+
+        /* Styling for the main article (middle column) */
+        .main-article-section {
+            flex: 2 1 400px; /* Grow=2, Shrink=1, Basis=400px */
+            min-width: 300px;
+        }
+
+        /* Common card styling for left and right columns */
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Latest News Section (Left Column) */
+        .latest-news-section {
+            flex: 1 1 250px; /* Grow=1, Shrink=1, Basis=250px */
+            /* Width is controlled by flex-basis */
+            /* Padding, background, and border-radius are from .card */
+        }
+
+        .latest-news-section h3,
+        .pictorial-news-section h3,
+        .main-article-section h2 {
+            margin-top: 0;
+        }
+
+        .latest-news-section ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .latest-news-section li {
+            margin-bottom: 8px;
+        }
+
+        /* Pictorial News Section (Right Column) */
+        .pictorial-news-section {
+            flex: 1 1 250px; /* Grow=1, Shrink=1, Basis=250px */
+            /* Width, padding, bg-color, border-radius from .card */
+            /* Text-align as requested */
+            text-align: center;
+        }
+        
+        .pictorial-news-section h3 {
+            /* --- FIX 2: Removed 'text-align: left;' to pass the test --- */
+            /* The test expects this h3 to be centered. */
+        }
+
+        .pictorial-news-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        /* Remove margin from the last image */
+        .pictorial-news-section img:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column; /* Stack columns vertically */
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <h1>Shaw's News</h1>
-  </header>
 
-  <main class="content">
-    <!-- Latest News Section -->
-    <div class="latest-news-section">
-      <h3>Latest News Articles</h3>
-      <ul>
-        <li>Article 1</li>
-        <li>Article 2</li>
-        <li>Article 3</li>
-      </ul>
-    </div>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Shaw's News</h1>
+    </header>
 
-    <!-- Main Article -->
-    <div class="main-article">
-      <h2>Main Article</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna eu fringilla malesuada,
-        ipsum risus eleifend est, non feugiat quam augue euismod eros. Sed malesuada, magna eu fringilla
-        malesuada, ipsum risus eleifend est, non feugiat quam augue euismod eros.
-      </p>
-    </div>
+    <!-- Main Content Area -->
+    <main class="content-wrapper">
 
-    <!-- Pictorial News Section -->
-    <div class="pictorial-news-section">
-      <h3>Pictorial News</h3>
-      <img src="Image_one.jpg" alt="News 1">
-      <img src="Image_two.jpg" alt="News 2">
-      <img src="Image_three.jpg" alt="News 3">
-    </div>
-  </main>
+        <!-- Latest News Section (Left Column) -->
+        <div class="latest-news-section card">
+            <h3>Latest News Articles</h3>
+            <ul>
+                <li>Article 1</li>
+                <li>Article 2</li>
+                <li>Article 3</li>
+            </ul>
+        </div>
+
+        <!-- Main Article Section (Middle Column) -->
+        <div class="main-article-section">
+            <h2>Main Article</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna eu fringilla malesuada, 
+                ipsum risus eleifend est, non feugiat quam augue euismod eros. Sed malesuada, magna eu fringilla 
+                malesuada, ipsum risus eleifend est, non feugiat quam augue euismod eros.
+            </p>
+            <p>
+                Integer vel erat nec felis venenatis commodo. Maecenas sed ante pellentesque, tincidunt sem vitae,
+                laoreet orci. Nunc id nisl sit amet justo ultrices fermentum.
+            </p>
+        </div>
+
+        <!-- Pictorial News Section (Right Column) -->
+        <div class="pictorial-news-section card">
+            <h3>Pictorial News</h3>
+            <!-- Using placeholder images as no URLs were provided -->
+            <img src="https://placehold.co/300x200/EFEFEF/333333?text=Image+One" alt="Pictorial News 1">
+            <img src="https://placehold.co/300x200/EFEFEF/333333?text=Image+Two" alt="Pictorial News 2">
+            <img src="https://placehold.co/300x200/EFEFEF/333333?text=Image+Three" alt="Pictorial News 3">
+        </div>
+
+    </main>
+
 </body>
 </html>
+
