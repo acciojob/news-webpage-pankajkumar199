@@ -8,7 +8,7 @@ body {
 .header {
   background-color: #011e29;
   color: white;
-  text-align: start; /* changed from center to start */
+  text-align: start !important; /* force start alignment */
   padding: 20px;
   font-size: 24px;
 }
@@ -19,8 +19,8 @@ body {
   margin: 40px;
 }
 
-.latest-news-section, 
-.main-article, 
+.latest-news-section,
+.main-article,
 .pictorial-news-section {
   background-color: white;
   padding: 20px;
@@ -44,11 +44,12 @@ body {
 }
 
 .pictorial-news-section {
-  text-align: start; /* changed from center to start */
+  text-align: start !important; /* force start alignment */
 }
 
 .pictorial-news-section img {
   width: 100%;
   margin-top: 10px;
   border-radius: 10px;
+  display: block; /* ensures left alignment */
 }
